@@ -1,0 +1,235 @@
+<!doctype html>
+<html style="cursor: url(http://cur.cursors-4u.net/symbols/sym-3/sym215.png), auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Anyka</title>
+</head>
+<style>
+  body {
+    background: #ffafaf;
+    color: #5e00d1;
+    text-align: center;
+    background-image: url("http://bestanimations.com/Signs&Shapes/Hearts/manyhearts/pink-watercolor-hearts-pattern-beating-gif.gif");
+    background-size: 300px;
+  }
+  #nav {
+    position: fixed;
+    font-family: "Trebuchet MS";
+    color: #ffc4c4;
+    width: 96%;
+    font-weight: none;
+    text-align: center;
+    margin: 0px;
+    box-shadow: 0px 10px 50px #fd8cff;
+    height: 120px;
+    line-height: 20px;
+    border: 8px solid #00edff;
+    background-image: url("http://bestanimations.com/Signs&Shapes/Hearts/animatedhearts/large-glowing-red-heart-animation-gif.gif");
+    background-size: 30px;
+    font-size: 20px;
+    padding 0px 0px 0px 0px;
+  }
+  #nav button {
+    background-color: #ffc4c4;
+    color: #5e00d1;
+    font-size: 20px;
+  }
+  #nav button:hover {
+    background-color: #5e00d1;
+    color: #ffc4c4;
+  }
+  h2 {
+    font-family: "Trebuchet MS";
+  }
+  p {
+    font-family: "Trebuchet MS";
+    font-size: 18px;
+  }
+  button {
+    background-color: #4998ff;
+    font-family: "Trebuchet MS";
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    color: #5e00d1;
+  }
+  button:hover {
+    background-color: #5e00d1;
+    color: #4998ff;
+
+  }
+  .spacer {
+    width: 100%;
+    height: 150px;
+  }
+</style>
+<body onload="password()">
+
+<audio autoplay loop id="song">
+  <source src="https://a.tumblr.com/tumblr_nyx7ggvwCm1tbb76go1.mp3" type="audio/mpeg">
+
+</audio>
+
+<div id="nav">
+<h1>Anyka</h1>
+<button type="button" id="b_story">Anyka's Story</button>
+<button type="button" id="b_praise">Praise</button>
+</div>
+
+<div class="spacer">
+  &nbsp
+</div>
+
+<div id="password">
+  <p>Password (Hint: It's in the HTML): <input type="password" id="pword"></input></p>
+  <p><button id="b_pword">Login</button></p>
+</div>
+
+<div id="story" style="display: none">
+<h2>Anyka's Story</h2>
+ 
+  <br><div id=0><button onclick="story()">Begin</button></div>
+  <div id=1 style="display: none">
+    <p>This is Anyka when she was young, sweet, and innocent.</p>
+    <img src="https://s17.postimg.org/i3px9de73/IMG_0915.jpg" style="height: 250px"><br>
+    <p><button onclick="next(1)">Next</button>         </p>
+  </div>
+  
+  <div id=2 style="display: none">
+    <p>Then she grew up and became this...</p>
+    <img src="https://s18.postimg.org/jqgigts8l/Image_7.jpg" style="height: 250px">
+    <img src="https://s18.postimg.org/pso57bgol/Image_8.jpg" style="height: 250px"><br>
+    <p><button onclick="back(2)">Back</button>         <button onclick="next(2)">Next</button></p>
+  </div>
+  
+  <div id=3 style="display: none">
+    <p>Addicted to drinking and drugs, she was kicked out of her family.</p>
+    <img src="https://media.giphy.com/media/xT5LMDzs9xYtHXeItG/giphy.gif" style="height: 250px"><br>
+    <p><button onclick="back(3)">Back</button>         <button onclick="next(3)">Next</button></p>
+  </div>
+  
+  <div id=4 style="display: none">
+    <p id="songPause" onclick="pause()">Yay!</p><img src="https://media.giphy.com/media/U3mxtrkdQHcgE/giphy.gif" style="height: 250px">
+    <p>         <button onclick="back(4)">Back</button></p>
+  </div>
+
+</div>
+
+
+<div id="praise" style="display: none">
+  <p>Please tell us how much you enjoyed this story.</p>
+  <p><input type="radio" value="V1" checked name="R1"> It is the best story in the world. <br><input type="radio" name="R1" value="V2" > I will read this over and over forever. <br><input type="radio" name="R1" value="V3"> It was so amazing.</p>
+  <p>Name: <input type="text" name="name"></p>
+  <p>Other Praises for My Awesomeness <br><textarea></textarea></p>
+  <button type="button" id="b_spam">Send Me Your Praise</button>
+
+</div>
+
+<script>
+  
+  var audio = "pause";
+  function pause() {
+    canPause = prompt("Why should I " + audio + " the music?");
+    while (canPause != "Because Nyan Cat is Awesome.") {
+      canPause = prompt("Wrong answer. Try again.");
+    }
+    if (audio === "pause") {
+      document.getElementById("song").pause();
+      alert("Then why would you want to pause it?");
+      audio = "play";
+    } else {
+      document.getElementById("song").play();
+      alert("Then why did you pause it?");
+      audio = "pause";
+    }
+  }
+
+
+  function story() {
+    document.getElementById(0).style.display = "none";
+    document.getElementById(1).style.display = "inherit";
+  }
+  function next(s) {
+    document.getElementById(s+1).style.display = "inherit";
+    document.getElementById(s).style.display = "none";
+  }
+  function back(s) {
+    document.getElementById(s-1).style.display = "inherit";
+    document.getElementById(s).style.display = "none";
+  }
+  function password() {
+    i = 1;
+    while(i < 10) {
+      p = 10-i
+      alert("You must click this " + p + " more times to reach the website.");
+      i ++;
+    }
+    alert("Just Kidding!");
+    i = 1;
+    while(i < 10) {
+      p = 10-i
+      alert("You must click this " + p + " more times to reach the website.");
+      i ++;
+    }
+    /*
+    var pword1 = prompt("Please enter the password", "");
+    while (pword1 != "Anyka Sucks") {
+      var pword1 = prompt("Incorrect. Try Again.");
+    }
+    alert("That was a very mean thing to say!");
+    document.getElementById("praise").style.display = "inherit";
+    */
+  }
+  document.getElementById("b_story").onclick = function () {
+    pword = document.getElementById("pword").value;
+    if (pword === "Anyka Sucks") {
+      document.getElementById("story").style.display = "inherit";
+      document.getElementById("praise").style.display = "none";
+    } else {
+      alert("Please enter the password.");
+    }
+  };
+  document.getElementById("b_praise").onclick = function () {
+    pword = document.getElementById("pword").value; 
+    if (pword === "Anyka Sucks") {
+      document.getElementById("praise").style.display = "inherit";
+      document.getElementById("story").style.display = "none";
+    } else {
+      alert("Please enter the password.");
+    }
+  };
+  document.getElementById("b_spam").onclick = function () {
+    i = 1;
+      while (i < 100) {
+        p = 100-i;
+        alert("You were stupid and pressed the button. Now you get to close this alert " + p + " times.");
+        i ++;
+      }
+  };
+  
+  document.getElementById("b_pword").onclick = function () {
+    pword = document.getElementById("pword").value;
+    if (pword === "Anyka Sucks") {
+      alert("That was a very mean thing to say!");
+      document.getElementById("story").style.display = "inherit";
+      document.getElementById("password").style.display = "none";
+    } else {
+      alert("Incorrect. Try Again.");
+      document.getElementById("pword").value = "";
+    }
+  };
+  document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        alert('Left was pressed');
+    }
+    else if(event.keyCode == 39) {
+        alert('Right was pressed');
+    }
+  });
+  
+</script>
+
+</body>
+</html>
